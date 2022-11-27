@@ -32,6 +32,8 @@
         $record = $con->prepare("UPDATE users SET user_working='0' WHERE id = {$_SESSION['user']['id']}");
         $record->execute();
 
+        $_SESSION["flash_stop_day"] = ["fecha" => "$fecha", "estilo" => "warning", "icono" => "check-circle-fill"];
+
         // Redirigimos a index
         header("Location: home.php");
         return;

@@ -14,18 +14,6 @@
         header("Location: index.php");
         return;
     }
-    $records = $con->query("SELECT entry_hour, exit_hour FROM records WHERE user_id = {$_SESSION['user']['id']}");
-
-    // $hora_entrada = $con->query("SELECT entry_hour FROM records WHERE id = {$_SESSION['user']['id']}");
-
-    // $hora_salida = $con->query("SELECT exit_hour FROM records WHERE id = {$_SESSION['user']['id']}");
-
-    // $date1 = strtotime($hora_entrada);
-    // $date2 = strtotime($hora_salida);
-
-
-    // $horas_totales = round((($date1-$date1)/60/60),2);
-
 ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---- PHP ---->
@@ -48,7 +36,8 @@
         <div class="container pt-4 p-3">
             <div class="row">
                 <div class="p-3">
-                <?php if (isset($_SESSION["flash_start_day"])): ?>
+                    <div class="card text-center">
+                        <?php if (isset($_SESSION["flash_start_day"])): ?>
                             <div class="container mt-4">
                                 <div class="alert alert-<?= $_SESSION["flash_start_day"]["estilo"]?>  alert-dismissible fade show" role="alert">
                                     <i class="bi bi-<?= $_SESSION["flash_start_day"]["icono"] ?>"></i>
@@ -78,50 +67,18 @@
                             </div>
                             <?php unset($_SESSION["error_start_day"]) ?>
                         <?php endif ?>
-                    <div class="card text-center tabla_contenido">
                         <div class="card-body">
                             <h3 class="card-title text-capitalize">Iniciar Jornada</h3>
                             <p class="m-2">Tiempo activo: 00:00:00</p>
-                            <div class="d-grid gap-2 d-md-block">
-                                <form method="POST" action="start_day.php">
-                                    <button href="" class="btn btn-success mb-2">Iniciar Jornada</button>
-                                </form>
-                                <form method="POST" action="stop_day.php">
-                                    <button href="" class="btn btn-danger mb-2">Finalizar Jornada</button>
-                                </form>
-                            </div>
+                            <form method="POST" action="start_day.php">
+                                <button href="" class="btn btn-success mb-2">Iniciar Jornada</button>
+                            </form>
+                            <form method="POST" action="stop_day.php">
+                                <button href="" class="btn btn-danger mb-2">Finalizar Jornada</button>
+                            </form>
                         </div>
                      </div>
                  </div>
-            </div>
-        </div>
-        <div class="container pt-4 p-3">
-            <div class="row">
-                <div class="">
-                    <div class="card text-center tabla_contenido">
-                        <div class="card-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Hora de Entrada</th>
-                                        <th scope="col">Hora de Salida</th>
-                                        <th scope="col">Total Horas</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <?php foreach ($records as $datos) : ?>
-                                        <tr>
-                                            <td><?= $datos["entry_hour"]?></td>
-                                            <td><?= $datos["exit_hour"]?></td>
-                                            <td><?= $horas_totales?></td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </main>

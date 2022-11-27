@@ -25,11 +25,11 @@
         $user = $working_user_id->fetch(PDO::FETCH_ASSOC);
 
         if ( $user['user_working'] != '0' ) {
-            $error = null;
+            $_SESSION["error_start_day"] = ["fecha" => "$fecha", "estilo" => "danger", "icono" => "exclamation-triangle-fill"];
             header("Location: home.php");
             return;
         }
-
+ 
         // Ejecutamos las consultas SQL, en ellas definimos que por defecto los valores a enviar sean los validados.
         $statement = $con->prepare("INSERT INTO records (user_id, entry_hour) VALUES ({$_SESSION['user']['id']}, :entry_hour)");
         $statement->bindParam(":entry_hour", $fecha);
@@ -38,6 +38,10 @@
         $record = $con->prepare("UPDATE users SET user_working=:insert_id WHERE id = {$_SESSION['user']['id']}");
         $record->bindParam(":insert_id", $con->lastInsertId());
         $record->execute();
+
+
+        $_SESSION["flash_start_day"] = ["fecha" => "$fecha", "estilo" => "success", "icono" => "check-circle-fill"];
+
         // Redirigimos a index
         header("Location: home.php");
         return;

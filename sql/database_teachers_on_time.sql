@@ -19,8 +19,8 @@ CREATE TABLE users (
 CREATE TABLE records (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    entry_hour VARCHAR(255),
-    exit_hour VARCHAR(255),
+    entry_hour TIMESTAMP,
+    exit_hour TIMESTAMP,
 
 
     FOREIGN KEY (user_id) REFERENCES users(id)

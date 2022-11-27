@@ -13,6 +13,10 @@ body {
   -webkit-box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53); 
   box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53);
 }
+.tabla_contenido{
+  -webkit-box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53); 
+  box-shadow: 1px 1px 32px 0px rgba(0,0,0,0.53);
+}
 
 .form-color{
   -webkit-box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53); 

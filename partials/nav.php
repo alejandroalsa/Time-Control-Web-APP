@@ -12,7 +12,7 @@
                 <a class="nav-link fw-bold py-1 px-0 m-2 active" href="home.php">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold py-1 px-0 m-2" href="###">Sesiones</a>
+                <a class="nav-link fw-bold py-1 px-0 m-2" href="sesions.php">Sesiones</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link fw-bold py-1 px-0 m-2" href="###">Mas Informacion</a>
@@ -22,7 +22,7 @@
       <form class="d-flex" role="search">
         <!-- En este caso insertaremos el nombre del usuario cuando inicie Sesión -->
         <?php if (isset($_SESSION["user"])): ?>
-            <button type="button" class="boton btn btn-secondary"><?= $_SESSION["user"]["user_name"] ?></button>
+            <a href="account.php"><button type="button" class="boton btn btn-dark"><?= $_SESSION["user"]["user_name"] ?></button></a>
             <a href="logout.php"><button type="button" class="cerrar btn btn-danger">Cerrar Sesión</button></a>                      
         <?php endif ?>
       </form>
