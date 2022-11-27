@@ -1,0 +1,30 @@
+body {
+  background-color: #203120;
+}
+
+.navbar img{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-color{
+  background-color: #444444;
+  -webkit-box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53); 
+  box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53);
+}
+
+.form-color{
+  -webkit-box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53); 
+  box-shadow: 14px 6px 32px 0px rgba(0,0,0,0.53);
+}
+
+.footer-margin{
+  margin-left:5%;
+  margin-right: 5%;
+  margin-bottom: 0%;
+}
+
+.btn{
+  margin-right: 10px;
+}
