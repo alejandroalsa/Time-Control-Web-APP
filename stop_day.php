@@ -16,6 +16,7 @@
 
     $fecha=date("Y-m-d H:i:s");
 
+
     
     // Definimos que para que se ejecuten el resto de instrucciones, el método de solicitud sea "POST"
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -31,6 +32,9 @@
 
         $record = $con->prepare("UPDATE users SET user_working='0' WHERE id = {$_SESSION['user']['id']}");
         $record->execute();
+
+        $total_hours = $con->prepare("UPDATE records SET  total_hours=CONCAT(MOD(HOUR(TIMEDIFF(entry_hour,exit_hour)), 24), ':',MINUTE(TIMEDIFF(entry_hour,exit_hour)), '') WHERE id = {$user['user_working']};");
+        $total_hours->execute();
 
         $_SESSION["flash_stop_day"] = ["fecha" => "$fecha", "estilo" => "warning", "icono" => "check-circle-fill"];
 

@@ -14,17 +14,8 @@
         header("Location: index.php");
         return;
     }
-    $records = $con->query("SELECT entry_hour, exit_hour FROM records WHERE user_id = {$_SESSION['user']['id']}");
+    $records = $con->query("SELECT entry_hour, exit_hour, total_hours FROM records WHERE user_id = {$_SESSION['user']['id']}");
 
-    // $hora_entrada = $con->query("SELECT entry_hour FROM records WHERE id = {$_SESSION['user']['id']}");
-
-    // $hora_salida = $con->query("SELECT exit_hour FROM records WHERE id = {$_SESSION['user']['id']}");
-
-    // $date1 = strtotime($hora_entrada);
-    // $date2 = strtotime($hora_salida);
-
-
-    // $horas_totales = round((($date1-$date1)/60/60),2);
 
 ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -114,8 +105,7 @@
                                         <tr>
                                             <td><?= $datos["entry_hour"]?></td>
                                             <td><?= $datos["exit_hour"]?></td>
-                                            <td><?= $horas_totales?></td>
-                                        </tr>
+                                            <td><?= $datos["total_hours"]?></td>
                                     <?php endforeach ?>
                                 </tbody>
                             </table>

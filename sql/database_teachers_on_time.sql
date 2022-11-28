@@ -21,6 +21,7 @@ CREATE TABLE records (
     user_id INT NOT NULL,
     entry_hour TIMESTAMP,
     exit_hour TIMESTAMP,
+    total_hours DECIMAL
 
 
     FOREIGN KEY (user_id) REFERENCES users(id)
