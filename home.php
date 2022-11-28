@@ -14,6 +14,10 @@
         header("Location: index.php");
         return;
     }
+
+    $hora_actual=date("H:i:s");
+    $fecha_actual=date("Y-m-d");
+
     $records = $con->query("SELECT entry_hour, exit_hour, total_hours FROM records WHERE user_id = {$_SESSION['user']['id']}");
 
 
@@ -43,7 +47,7 @@
                             <div class="container mt-4">
                                 <div class="alert alert-<?= $_SESSION["flash_start_day"]["estilo"]?>  alert-dismissible fade show" role="alert">
                                     <i class="bi bi-<?= $_SESSION["flash_start_day"]["icono"] ?>"></i>
-                                    <strong>¡Jornada Iniciada!</strong>, usted a iniciado su jornada el dia:<?= $_SESSION["flash_start_day"]["fecha"] ?> .
+                                    <strong>¡Jornada Iniciada!</strong>, usted ha iniciado su jornada el día: <strong><?= $fecha_actual?> a las: <?= $hora_actual?></strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             </div>
@@ -53,7 +57,7 @@
                             <div class="container mt-4">
                                 <div class="alert alert-<?= $_SESSION["flash_stop_day"]["estilo"]?>  alert-dismissible fade show" role="alert">
                                     <i class="bi bi-<?= $_SESSION["flash_stop_day"]["icono"] ?>"></i>
-                                    <strong>¡Jornada Detenida!</strong>, usted a iniciado su jornada el dia:<?= $_SESSION["flash_stop_day"]["fecha"] ?> .
+                                    <strong>¡Jornada Detenida!</strong>,usted ha finalizado su jornada el día: <strong><?= $fecha_actual?></strong> a las: <strong><?= $hora_actual?></strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             </div>
@@ -63,7 +67,7 @@
                             <div class="container mt-4">
                                 <div class="alert alert-<?= $_SESSION["error_start_day"]["estilo"]?>  alert-dismissible fade show" role="alert">
                                     <i class="bi bi-<?= $_SESSION["error_start_day"]["icono"] ?>"></i>
-                                    <strong>¡Error!</strong>, usted ya tiene una sesion iniciada.
+                                    <strong>¡Error!</strong>, usted ya tiene una <strong>Jornada Iniciada.</strong>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             </div>
@@ -72,7 +76,7 @@
                     <div class="card text-center tabla_contenido">
                         <div class="card-body">
                             <h3 class="card-title text-capitalize">Iniciar Jornada</h3>
-                            <p class="m-2">Tiempo activo: 00:00:00</p>
+                            <p><strong>Día:</strong> <span><?= $fecha_actual?></span> <strong>Hora:</strong> <span><?= $hora_actual?></span></p>
                             <div class="d-grid gap-2 d-md-block">
                                 <form method="POST" action="start_day.php">
                                     <button href="" class="btn btn-success mb-2">Iniciar Jornada</button>
@@ -115,5 +119,8 @@
             </div>
         </div>
     </main>
+    <?php
+        require "./partials/footer_users.php";    
+    ?>
    </body>
 </html>

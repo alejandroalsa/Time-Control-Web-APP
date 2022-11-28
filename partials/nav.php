@@ -12,10 +12,10 @@
                 <a class="nav-link fw-bold py-1 px-0 m-2 active" href="home.php">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold py-1 px-0 m-2" href="sesions.php">Sesiones</a>
+              <a href="guia.php" class="nav-link fw-bold py-1 px-0 m-2">Guía de uso</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold py-1 px-0 m-2" href="###">Mas Informacion</a>
+              <a href="version.php" class="nav-link fw-bold py-1 px-0 m-2">Versión 1.0</a>
             </li>
         <?php endif ?>
       </ul>

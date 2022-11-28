@@ -4,7 +4,7 @@
 $host = "localhost";
 
 // Seleccionamos la Base de Datos teachers_on_time
-$database = "teachers_on_time";
+$database = "teachers_on_time2";
 
 // Definimos el usuario para conectarnos y su contraseña
 $name = "root";

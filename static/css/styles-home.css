@@ -29,6 +29,23 @@ body {
   margin-bottom: 0%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+.footer{
+  margin-top: 10%;
+}
+
 .btn{
   margin-right: 10px;
+}
+
+.text{
+  color: #888;
+  transition: 0.5s;
+}
+
+.text:hover{
+  color: #fff;
 }
