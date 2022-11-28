@@ -1,0 +1,92 @@
+---
+- name: Playbook para instalar la APP Teachers on Time del CCDA.
+  hosts: AWS 
+  become: yes
+
+  vars:
+    - phpmyadmin_user: admin_user_teachers-on-time
+    - phpmyadmin_password: J88s1y6h%4w$e1NMYpI4
+    - phpmyadmin_db_name: teachers_on_time
+
+  tasks:
+
+    - name: Actualizndo los repositorios
+      apt:
+        update_cache: yes
+
+    - name: Instalar el servidor web Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Instalar el sistema de base de datos MySQL
+      apt:
+        name: mysql-server
+        state: present
+
+    - name: Descarga del codigo fuente de phpMyAdmin
+      ansible.builtin.get_url:
+        url: https://files.phpmyadmin.net/phpMyAdmin/5.2.0/phpMyAdmin-5.2.0-all-languages.zip
+        dest: /tmp/
+
+    - name: Descarga UNZIP
+      apt:
+        name: unzip
+        state: present
+
+    - name: Descompresion de phpMyAdmin de /tmp
+      unarchive:
+        src:  /tmp/phpMyAdmin-5.2.0-all-languages.zip
+        dest: /tmp/
+        remote_src: yes
+    
+    - name: Eiliminacion de phpMyAdmin de /tmp
+      file:
+        path: /tmp/phpMyAdmin-5.2.0-all-languages.zip
+        state: absent
+    
+    - name: Movimiento de la carpeta de phpMyAdmin a /var/www/html/
+      copy:
+        src: /tmp/phpMyAdmin-5.2.0-all-languages/
+        dest: /var/www/html/phpmyadmin
+        remote_src: yes
+
+    - name: Modificacion del usuario propietario del directorio /vars/www/html/phpmyadmin
+      file: 
+        path: /vars/www/html/phpmyadmin
+        state: directory
+        owner: www-data
+        group: www-data
+        recurse: yes
+
+    - name: Instalamos el gestor de paquetes de Python3
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: Instalamos el modulo de pymysql
+      pip:
+        name: pymysql
+        state: present
+
+    - name: Crear una base de datos
+      mysql_db:
+        name: "{{ phpmyadmin_db_name }}"
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
+    - name: Creamos un usuario para la Base de datos
+      no_log: true
+      mysql_user:
+        name: "{{ phpmyadmin_user }}"
+        password: "{{ phpmyadmin_password }}"
+        priv: "{{ phpmyadmin_user }}.*:ALL"
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
+    - name: Importacion del script de la base de datos
+      mysql_db:
+        name: "{{ phpmyadmin_db_name}}"
+        state: present
+        target: /var/www/html/phpmyadmin/sql/create_tables.sql
+        login_unix_socket: /var/run/mysqld/mysqld.sock
