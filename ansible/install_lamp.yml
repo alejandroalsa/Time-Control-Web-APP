@@ -5,7 +5,7 @@
 
   vars:
     - phpmyadmin_user: admin_user_teachers-on-time
-    - phpmyadmin_password: J88s1y6h%4w$e1NMYpI4
+    - phpmyadmin_password: J88s1y6h%4we1NMYpI4
     - phpmyadmin_db_name: teachers_on_time
 
   tasks:
