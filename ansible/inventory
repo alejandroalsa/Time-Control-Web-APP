@@ -1,0 +1,7 @@
+[teachers_on_time]
+3.219.247.19
+
+[teachers_on_time:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/home/alejandro/AWS/vockey.pem
+ansible_ssh_common_args='-o StrictHostKeyChecking=accept-new'

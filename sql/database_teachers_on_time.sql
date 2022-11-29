@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS teachers_on_time2;
+DROP DATABASE IF EXISTS teachers_on_time;
 
-CREATE DATABASE  teachers_on_time2;
+CREATE DATABASE  teachers_on_time;
 
-USE  teachers_on_time2;
+USE  teachers_on_time;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,

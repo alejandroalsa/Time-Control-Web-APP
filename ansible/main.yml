@@ -1,0 +1,5 @@
+---
+# - import_playbook: tasks/install_lamp.yml
+# - import_playbook: tasks/install_tools_lamp.yml
+- import_playbook: tasks/create_db_and_user.yml
+# - import_playbook: tasks/deploy_web.yml

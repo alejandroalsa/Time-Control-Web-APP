@@ -1,0 +1,34 @@
+---
+- name: PlayBook para instalacion de la pila LAMP
+  hosts: teachers_on_time 
+  become: true
+
+  tasks:
+
+    - name: Actualizndo los repositorios
+      apt:
+        update_cache: true
+
+    - name: Instalando el servidor web Apache2.4
+      apt:
+        name: apache2
+        state: present
+
+    - name: Instalando el sistema de base de datos MySQL
+      apt:
+        name: mysql-server
+        state: present
+
+    - name: Instalando PHP y mudulos de PHP
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - php
+        - libapache2-mod-php
+        - php-mysql
+        
+    - name: Reiniciando el servidor web Apache2.4
+      ansible.builtin.service:
+        name: apache2.service
+        state: restarted

@@ -1,13 +1,13 @@
 <?php
 
 // Definimos la dirección IP de la Base de Datos
-$host = "localhost";
+$host = "127.0.0.1";
 
 // Seleccionamos la Base de Datos teachers_on_time
-$database = "teachers_on_time2";
+$database = "teachers_on_time";
 
 // Definimos el usuario para conectarnos y su contraseña
-$name = "admin_user_teachers-on-time";
+$name = "admin_user_teachers_on_time";
 $password = "J88s1y6h%4we1NMYpI4";
 
 // Utilizamos un librería (PDO) para conectarnos a la Base de Datos

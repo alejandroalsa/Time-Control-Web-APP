@@ -1,0 +1,23 @@
+---
+- name: PlayBook la creación de la Base de Datos y creación del usuario para la Base de Datos
+  hosts: teachers_on_time 
+  become: true
+
+  vars:
+
+    - usuario_base_datos: admin_user_teachers_on_time
+    - contrasena_usuario_base_datos: J88s1y6h%4we1NMYpI4
+    - nombre_base_datos: teachers_on_time
+
+  tasks:
+
+    - name: Creando la Base de Datos
+      mysql_db:
+        name: '{{ nombre_base_datos }}'
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
+    - name: Reiniciando Apache2.4
+      ansible.builtin.service:
+        name: apache2.service
+        state: restarted
