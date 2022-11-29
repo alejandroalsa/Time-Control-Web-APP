@@ -7,8 +7,8 @@ $host = "127.0.0.1";
 $database = "teachers_on_time";
 
 // Definimos el usuario para conectarnos y su contraseña
-$name = "admin_user_teachers_on_time";
-$password = "J88s1y6h%4we1NMYpI4";
+$name = "root";
+$password = "";
 
 // Utilizamos un librería (PDO) para conectarnos a la Base de Datos
 try {
