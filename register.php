@@ -45,7 +45,7 @@
                         ":user_phone_number" => $_POST["user_phone_number"],
                         ":user_id_seneca" => $_POST["user_id_seneca"],
                         ":user_working" => 0,
-                        ":registration_date_user" => $_POST["registration_date_user"], 
+                        ":registration_date_user" => $registration_date_user, 
                         ":user_password" => password_hash($_POST["user_password"], PASSWORD_BCRYPT),
                     ]);
                     $statement = $con->prepare("SELECT * FROM users WHERE user_email = :user_email LIMIT 1");

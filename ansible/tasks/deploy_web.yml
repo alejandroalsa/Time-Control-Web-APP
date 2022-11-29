@@ -16,7 +16,7 @@
         url: https://github.com/alejandroalsa/Teachers-on-Time/archive/refs/heads/master.zip
         dest: /var/www/html
 
-    - name: Descomprimiendo Prestashop + añadiendo usuario www-data y grupo www-data
+    - name: Descomprimiendo Teachers on Time + añadiendo usuario www-data y grupo www-data
       ansible.builtin.unarchive:
         src: /var/www/html/Teachers-on-Time-master.zip
         dest: /var/www/html
