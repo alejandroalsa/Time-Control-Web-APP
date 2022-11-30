@@ -1,6 +1,6 @@
 <nav class="nav-color navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php"><img class="mr-2" src="./static/img/logo-colegio-almeria.png"/>Teachers on Time</a>
+    <a class="navbar-brand" href="index.php"><img class="mr-2" src="./static/img/logo.png"/>Time Control</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

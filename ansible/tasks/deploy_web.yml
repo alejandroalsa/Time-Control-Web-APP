@@ -1,40 +1,40 @@
 ---
-- name: PlayBook desplegar la Aplicacion Web Teachers on Time
-  hosts: teachers_on_time 
+- name: PlayBook desplegar la Aplicacion Web Time Control
+  hosts: time_control 
   become: true
 
   vars:
 
-    - usuario_base_datos: admin_user_teachers_on_time
+    - usuario_base_datos: admin_user_time_control
     - contrasena_usuario_base_datos: J88s1y6h%4we1NMYpI4
-    - nombre_base_datos: teachers_on_time
+    - nombre_base_datos: time_control
 
   tasks:
 
-    - name: Descargando Aplicacion Web Teachers on Time
+    - name: Descargando Aplicacion Web Time Control
       ansible.builtin.get_url:
-        url: https://github.com/alejandroalsa/Teachers-on-Time/archive/refs/heads/master.zip
+        url: https://github.com/alejandroalsa/Time-Control/archive/refs/heads/master.zip
         dest: /var/www/html
 
-    - name: Descomprimiendo Teachers on Time + añadiendo usuario www-data y grupo www-data
+    - name: Descomprimiendo Time Control + añadiendo usuario www-data y grupo www-data
       ansible.builtin.unarchive:
-        src: /var/www/html/Teachers-on-Time-master.zip
+        src: /var/www/html/Time-Control-master.zip
         dest: /var/www/html
         remote_src: true
         owner: www-data
         group: www-data
 
-    - name: Borrando zip de Teachers on Time
+    - name: Borrando zip de Time Control
       ansible.builtin.file:
-        path: /var/www/html/Teachers-on-Time-master.zip
+        path: /var/www/html/Time-Control-master.zip
         state: absent
 
-    - name: Borrando carpeta ansible de Teachers on Time
+    - name: Borrando carpeta ansible de Time Control
       ansible.builtin.file:
         path: /var/www/html/ansible
         state: absent
 
-    - name: Borrando carpeta sql de Teachers on Time
+    - name: Borrando carpeta sql de Time Control
       ansible.builtin.file:
         path: /var/www/html/sql
         state: absent

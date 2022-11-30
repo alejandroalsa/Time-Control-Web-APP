@@ -1,15 +1,15 @@
-DROP DATABASE IF EXISTS teachers_on_time;
+DROP DATABASE IF EXISTS time_control;
 
-CREATE DATABASE  teachers_on_time;
+CREATE DATABASE  time_control;
 
-USE  teachers_on_time;
+USE  time_control;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_name VARCHAR(255) DEFAULT NULL,
     user_surname VARCHAR(255) DEFAULT NULL,
     user_phone_number VARCHAR(255) DEFAULT NULL,
-    user_id_seneca VARCHAR(255) DEFAULT NULL,
+    user_id_business VARCHAR(255) DEFAULT NULL,
     registration_date_user TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     user_email VARCHAR(255) UNIQUE DEFAULT NULL,
     user_working INT DEFAULT NULL,

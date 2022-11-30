@@ -21,9 +21,9 @@
 
 <!-- MAIN -->
       <main class="px-3 main-politica">
-        <h1>Teachers on Time to CCDA</h1>
+        <h1>Time Control</h1>
         <hr>
-        <p class="text-start">Esta es una Aplicación Web desarrollada para el Colegio Cooperativa Ciudad de Almería. La funcion de esta Aplicación Web es un control horario para los profesor@s del CCDA!</p>
+        <p class="text-start">Esta es una Aplicación Web desarrollada para el control horario. La funcion de esta Aplicación Web es un control horario para los empleados!</p>
         <p class="text-start">La Aplicación Web esta desarrollada por <a href="https://">Diwes</a> empresa de Diseño/Desarrollo Web, Desarrollo de Software y Diseño para Marcas, en Almería ofreciendo servicio a toda España<p>
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional</a>.
       </main>
