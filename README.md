@@ -10,6 +10,8 @@
 
 *   **Telefono de Usuarios** = `user_phone_number`
 
+*   **ID de Empresa de Usuarios** = `user_id_business`
+
 *   **Contraseña de Usuarios** = `user_password`
 
 *   **Fecha de Registro de Usuarios** = `registration_date_user`
