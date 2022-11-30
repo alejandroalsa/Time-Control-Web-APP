@@ -1,6 +1,6 @@
 ---
 - name: PlayBook para instalacion de la pila LAMP
-  hosts: teachers_on_time 
+  hosts: time_control 
   become: true
 
   tasks:

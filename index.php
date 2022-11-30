@@ -9,6 +9,7 @@
 <!-- PHP para incluir el head -->
 
     <link rel="stylesheet" href="./static/css/styles.css">
+    <title>Time Control</title>
   </head>
   <body class="d-flex h-100 text-center text-bg-dark body-politica">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -21,7 +22,7 @@
 
 <!-- MAIN -->
       <main class="px-3 main-politica">
-        <h1>Control Horario.</h1>
+        <h1>Control Horario</h1>
         <p class="lead">
           <a href="login.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Iniciar Sesión</a>
           <a href="register.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Registrarse</a>

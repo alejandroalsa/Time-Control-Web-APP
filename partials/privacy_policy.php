@@ -26,10 +26,10 @@
                     <strong>Afiliado</strong> significa una entidad que controla, es controlada o está bajo control común con una parte, donde "control" significa la propiedad del 50% o más de las acciones, participación accionaria u otros valores con derecho a voto para la elección de directores u otra autoridad administrativa.
                 </p>
                 <p>
-                    <strong>Aplicación</strong> significa el programa de software proporcionado por la Compañía descargado por Usted en cualquier dispositivo electrónico, llamado Teachers on Time
+                    <strong>Aplicación</strong> significa el programa de software proporcionado por la Compañía descargado por Usted en cualquier dispositivo electrónico, llamado Time Control
                 </p>
                 <p>
-                    <strong>La Compañía</strong> (referida como "la Compañía", "Nosotros", "Nos" o "Nuestro" en este Acuerdo) se refiere a Teachers on Time.
+                    <strong>La Compañía</strong> (referida como "la Compañía", "Nosotros", "Nos" o "Nuestro" en este Acuerdo) se refiere a Time Control.
                 </p>
                 <p>
                     <strong>País</strong> se refiere a: España
@@ -248,8 +248,8 @@
         </h2>
         <div id="contacto" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-                <p>Por correo electrónico: info@teachersontimeccds.com</p>
-                <p>Al visitar esta página en nuestro sitio web: <a href="https://teachersontimeccds.com/consultas.php">Contacto</a></p>
+                <p>Por correo electrónico: alejandro@alejandroalsa.es</p>
+                <p>Al visitar esta página en nuestro sitio web: <a href="https://alejandroalsa.es">Contacto</a></p>
             </div>
         </div>
     </div>

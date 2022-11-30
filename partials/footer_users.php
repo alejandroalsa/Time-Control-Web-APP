@@ -1,6 +1,6 @@
 <footer class="footer text-center text-white-50">
       <hr>
-      <p>&copy; <?php echo date('Y'); ?> Teachers on Time | Desarrollado por 
+      <p>&copy; <?php echo date('Y'); ?> Time Control | Desarrollado por 
             <a href="https://diwes.es">Diwes</a>
       </p>
       <p>

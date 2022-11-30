@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/alejandroalsa/Time-Control-Web-APP.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "Time-Control"]
+	remote = origin
+	merge = refs/heads/Time-Control

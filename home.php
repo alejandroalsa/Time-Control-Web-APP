@@ -38,7 +38,7 @@
 <!-- PHP para incluir el head -->
 
     <link rel="stylesheet" href="./static/css/styles-home.css">
-    <title>Teachers on Time | Home</title>
+    <title>Time Control | Home</title>
 </head>
 <body>
     <?php
