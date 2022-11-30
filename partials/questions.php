@@ -51,7 +51,7 @@
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contraseña" aria-expanded="false" aria-controls="flush-collapseOne">¿Cómo recupero mi contraseña?</button>
         </h2>
         <div id="contraseña" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">En el caso de que no se acuerde de su, contraseña tendrá que ponerse en contacto con el administrador de la APP: <a href="mailto:info@teachersontimeccds.com?Subject=Solicitud%20recuperación%20de%20contraseña">Solicitar recuperación de contraseña</a></div>
+            <div class="accordion-body">En el caso de que no se acuerde de su, contraseña tendrá que ponerse en contacto con el administrador de la APP: <a href="mailto:alejandro@alejandroalsa.es?Subject=Solicitud%20recuperación%20de%20contraseña">Solicitar recuperación de contraseña</a></div>
         </div>
     </div>
 <!-- Pregunta ¿Cómo recupero mi contraseña? -->
@@ -62,7 +62,7 @@
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#elimino_cuenta" aria-expanded="false" aria-controls="flush-collapseOne">¿Cómo elimino mi cuenta?</button>
         </h2>
         <div id="elimino_cuenta" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Para poder eliminar su cuenta tendrá que ponerse en contacto con el administrador de la APP: <a href="mailto:info@teachersontimeccds.com?Subject=Solicitud%20eliminacion%20de%20cuenta">Solicitar eliminación de cuenta</a></div>
+            <div class="accordion-body">Para poder eliminar su cuenta tendrá que ponerse en contacto con el administrador de la APP: <a href="mailto:alejandro@alejandroalsa.es?Subject=Solicitud%20eliminacion%20de%20cuenta">Solicitar eliminación de cuenta</a></div>
         </div>
     </div>
 <!-- Pregunta ¿Cómo elimino mi cuenta? -->

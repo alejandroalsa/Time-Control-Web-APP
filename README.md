@@ -1,4 +1,4 @@
-# Teachers on Time
+# Time Control
 
 ## Declaracion de IDs
 
@@ -9,8 +9,6 @@
 *   **Correo electronico de Usuarios** = `user_email`
 
 *   **Telefono de Usuarios** = `user_phone_number`
-
-*   **ID de Seneca de Usuarios** = `user_id_seneca`
 
 *   **Contraseña de Usuarios** = `user_password`
 

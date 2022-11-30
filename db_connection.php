@@ -3,8 +3,8 @@
 // Definimos la dirección IP de la Base de Datos
 $host = "127.0.0.1";
 
-// Seleccionamos la Base de Datos teachers_on_time
-$database = "teachers_on_time";
+// Seleccionamos la Base de Datos time_control
+$database = "time_control";
 
 // Definimos el usuario para conectarnos y su contraseña
 $name = "root";

@@ -1,6 +1,6 @@
 ---
 - name: PlayBook para instalacion de la pila LAMP
-  hosts: teachers_on_time 
+  hosts: time_control 
   become: true
 
   tasks:
@@ -33,12 +33,12 @@
     - name: Moviendo la carpeta de phpMyAdmin a /var/www/html/
       copy:
         src: /tmp/phpMyAdmin-5.2.0-all-languages/
-        dest: /var/www/html/acceso_base_de_datos_teachers_on_time
+        dest: /var/www/html/acceso_base_de_datos_time_control
         remote_src: true
 
-    - name: Anadiendo usuario->www:web y grupo->www:web a /vars/www/html/acceso_base_de_datos_teachers_on_time
+    - name: Anadiendo usuario->www:web y grupo->www:web a /vars/www/html/acceso_base_de_datos_time_control
       file: 
-        path: /vars/www/html/acceso_base_de_datos_teachers_on_time
+        path: /vars/www/html/acceso_base_de_datos_time_control
         state: directory
         owner: www-data
         group: www-data

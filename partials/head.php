@@ -14,5 +14,5 @@
 <!-- Bootstrap -->
 
 <!-- Contenido Estatico -->
-    <link rel="icon" type="image/x-icon" href="./static/img/logo-colegio-almeria.png">
+    <link rel="icon" type="image/x-icon" href="./static/img/logo.png">
 <!-- Contenido Estatico -->

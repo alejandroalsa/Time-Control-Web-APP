@@ -13,7 +13,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Comenzamos con el proceso de validación de los tres campos, en esta primera línea validamos que los tres campos estén rellenos
-        if (empty($_POST["user_name"]) || empty($_POST["user_surname"]) || empty($_POST["user_email"]) || empty($_POST["user_phone_number"]) || empty($_POST["user_id_seneca"]) || empty($_POST["user_password"])) {
+        if (empty($_POST["user_name"]) || empty($_POST["user_surname"]) || empty($_POST["user_email"]) || empty($_POST["user_phone_number"]) || empty($_POST["user_id_business"]) || empty($_POST["user_password"])) {
             $error = "Por favor rellene todos los campos.";
 
         // En la segunda línea validamos que el campo de Email contenga un @
@@ -33,25 +33,25 @@
                 $error = "Este email ya está registrado";
             } else{
 
-                //Después de validar que el email introducido no esté ya registrado, comprobamos que el ID de seneca introducido no esté ya registrado con la variable "con"
-                $statement = $con->prepare("SELECT * FROM users WHERE user_id_seneca = :user_id_seneca");
-                $statement->bindParam(":user_id_seneca", $_POST["user_id_seneca"]);
+                //Después de validar que el email introducido no esté ya registrado, comprobamos que el ID de Empresa introducido no esté ya registrado con la variable "con"
+                $statement = $con->prepare("SELECT * FROM users WHERE user_id_business = :user_id_business");
+                $statement->bindParam(":user_id_business", $_POST["user_id_business"]);
                 $statement->execute();
 
-                // Declaramos una condición, en dicha condición declaramos que si el ID de Seneca es mayor que 0 lo que significaría que el ID de Seneca ya está registrado, enviara el error.
+                // Declaramos una condición, en dicha condición declaramos que si el ID de Empresa es mayor que 0 lo que significaría que el ID de Empresa ya está registrado, enviara el error.
                 if ($statement->rowCount() > 0) {
-                    $error = "Este ID de Seneca ya está registrado";
+                    $error = "Este ID de Empresa ya está registrado";
                 } else{
 
                     //Después de validar todos los datos, preparamos la sentencia SQL para introducir los datos enviados por el usuario
                     $con
-                    ->prepare("INSERT INTO users (user_name, user_surname, user_email, user_phone_number, user_id_seneca, user_password, registration_date_user, user_working) VALUES (:user_name, :user_surname, :user_email, :user_phone_number, :user_id_seneca, :user_password, :registration_date_user, :user_working)")
+                    ->prepare("INSERT INTO users (user_name, user_surname, user_email, user_phone_number, user_id_business, user_password, registration_date_user, user_working) VALUES (:user_name, :user_surname, :user_email, :user_phone_number, :user_id_business, :user_password, :registration_date_user, :user_working)")
                     ->execute([ 
                         ":user_name" => $_POST["user_name"],
                         ":user_surname" => $_POST["user_surname"],
                         ":user_email" => $_POST["user_email"],
                         ":user_phone_number" => $_POST["user_phone_number"],
-                        ":user_id_seneca" => $_POST["user_id_seneca"],
+                        ":user_id_business" => $_POST["user_id_business"],
                         ":user_working" => 0,
                         ":registration_date_user" => $registration_date_user, 
                         ":user_password" => password_hash($_POST["user_password"], PASSWORD_BCRYPT),
@@ -131,8 +131,8 @@
                 <label for="user_phone_number">Telefono</label>
             </div>
             <div class="form-floating mb-2">
-                <input id="user_id_seneca" type="text" class="form-control" name="user_id_seneca" require autocomplete="user_id_seneca" autofocus placeholder="ID Seneca">
-                <label for="user_id_seneca">ID Seneca</label>
+                <input id="user_id_business" type="text" class="form-control" name="user_id_business" require autocomplete="user_id_business" autofocus placeholder="ID Empresa">
+                <label for="user_id_business">ID Empresa</label>
             </div>
             <div class="form-floating mb-2">
                 <input id="user_password" type="password" class="form-control" name="user_password" require autocomplete="user_password" autofocus placeholder="Contraseña">

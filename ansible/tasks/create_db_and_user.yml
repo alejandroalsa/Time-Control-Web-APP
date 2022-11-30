@@ -1,13 +1,13 @@
 ---
 - name: PlayBook la creación de la Base de Datos y creación del usuario para la Base de Datos
-  hosts: teachers_on_time 
+  hosts: time_control 
   become: true
 
   vars:
 
-    - usuario_base_datos: admin_user_teachers_on_time
+    - usuario_base_datos: admin_user_time_control
     - contrasena_usuario_base_datos: J88s1y6h%4we1NMYpI4
-    - nombre_base_datos: teachers_on_time
+    - nombre_base_datos: time_control
 
   tasks:
 
