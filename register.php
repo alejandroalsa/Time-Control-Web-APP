@@ -45,7 +45,7 @@
 
                     //Después de validar todos los datos, preparamos la sentencia SQL para introducir los datos enviados por el usuario
                     $con
-                    ->prepare("INSERT INTO users (user_name, user_surname, user_email, user_phone_number, user_id_business, user_password, registration_date_user, user_working) VALUES (:user_name, :user_surname, :user_email, :user_phone_number, :user_id_business, :user_password, :registration_date_user, :user_working)")
+                    ->prepare("INSERT INTO users (user_name, user_surname, user_email, user_phone_number, user_id_business, user_password, registration_date_user, user_working, user_admin) VALUES (:user_name, :user_surname, :user_email, :user_phone_number, :user_id_business, :user_password, :registration_date_user, :user_working, :user_admin)")
                     ->execute([ 
                         ":user_name" => $_POST["user_name"],
                         ":user_surname" => $_POST["user_surname"],
@@ -53,6 +53,7 @@
                         ":user_phone_number" => $_POST["user_phone_number"],
                         ":user_id_business" => $_POST["user_id_business"],
                         ":user_working" => 0,
+                        ":user_admin" => 0,
                         ":registration_date_user" => $registration_date_user, 
                         ":user_password" => password_hash($_POST["user_password"], PASSWORD_BCRYPT),
                     ]);

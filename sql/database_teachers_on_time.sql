@@ -13,7 +13,8 @@ CREATE TABLE users (
     registration_date_user TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     user_email VARCHAR(255) UNIQUE DEFAULT NULL,
     user_working INT DEFAULT NULL,
-    user_password VARCHAR(255) DEFAULT NULL
+    user_password VARCHAR(255) DEFAULT NULL,
+    user_admin VARCHAR(255) DEFAULT NULL
 );
 
 CREATE TABLE records (

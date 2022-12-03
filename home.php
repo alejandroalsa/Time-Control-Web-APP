@@ -20,7 +20,7 @@
     $fecha_actual=date("Y-m-d");
 
 // Realizamos una consulta SQL para obtener la hora de entrada, hora de salida y total de horas del usuario cuyo "user_id" sea el de la sesión iniciada
-    $records = $con->query("SELECT entry_hour, exit_hour, total_hours FROM records WHERE user_id = {$_SESSION['user']['id']}");
+    $records = $con->query("SELECT entry_hour, exit_hour, total_hours, total_remuneration FROM records WHERE user_id = {$_SESSION['user']['id']}");
 
 ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -99,6 +99,7 @@
                                         <th scope="col">Hora de Entrada</th>
                                         <th scope="col">Hora de Salida</th>
                                         <th scope="col">Total Horas</th>
+                                        <th scope="col">Total Ganado</th>
                                     </tr>
                                 </thead>
 
@@ -109,6 +110,7 @@
                                             <td><?= $datos["entry_hour"]?></td>
                                             <td><?= $datos["exit_hour"]?></td>
                                             <td><?= $datos["total_hours"]?></td>
+                                            <td><?= $datos["total_remuneration"]?> €</td>
                                     <?php endforeach ?>
                                 </tbody>
 
