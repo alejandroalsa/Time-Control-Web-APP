@@ -99,7 +99,6 @@
                                         <th scope="col">Hora de Entrada</th>
                                         <th scope="col">Hora de Salida</th>
                                         <th scope="col">Total Horas</th>
-                                        <th scope="col">Total Ganado</th>
                                     </tr>
                                 </thead>
 
@@ -110,7 +109,6 @@
                                             <td><?= $datos["entry_hour"]?></td>
                                             <td><?= $datos["exit_hour"]?></td>
                                             <td><?= $datos["total_hours"]?></td>
-                                            <td><?= $datos["total_remuneration"]?> €</td>
                                     <?php endforeach ?>
                                 </tbody>
 
