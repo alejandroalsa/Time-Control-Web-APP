@@ -74,11 +74,11 @@
         <div class="alert alert-<?= $_SESSION["delete_user"]["estilo"]?>  alert-dismissible fade show" role="alert">
                             <!-- Definimos el contenido que tendrá la variable en este caso estilo -->
             <i class="bi bi-<?= $_SESSION["delete_user"]["icono"] ?>"></i>
-            <strong>¡Usuario Eiliminado!</strong>
+            <strong>¡Usuario Eliminado!</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
     <!-- Destruimos la variable "$_SESSION["update_data"]" localmente -->
     <?php unset($_SESSION["delete_user"]) ?>
 <?php endif ?>
-<!-- Mensaje flash Usuario Actualizado -->
+<!-- Mensaje flash Usuario Eliminado -->

@@ -12,7 +12,7 @@
                 <a class="nav-link fw-bold py-1 px-0 m-2 active" href="home.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a href="version.php" class="nav-link fw-bold py-1 px-0 m-2">Versión 1.0</a>
+              <a href="version.php" class="nav-link fw-bold py-1 px-0 m-2">Versión 2.0</a>
             </li>
         <?php endif ?>
       </ul>

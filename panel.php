@@ -77,7 +77,7 @@
                                         <th scope="col">Hora Entrada</th>
                                         <th scope="col">Hora Salida</th>
                                         <th scope="col">Total Horas</th>
-                                        <th scope="col">Remuneracion</th>
+                                        <th scope="col">Remuneración</th>
                                     </tr>
                                 </thead>
 
@@ -112,8 +112,8 @@
                         <div class="card text-center profesores">
                             <div class="card-body">
                                 <h3 class="card-title text-capitalize"><?= $profesores["user_name"] ?> <?= $profesores["user_surname"] ?></h3>
-                                <p class="m-2"><strong>Telefono:</strong> <?= $profesores["user_phone_number"] ?></p>
-                                <p class="m-2"><strong>ID Seneca:</strong> <?= $profesores["user_id_business"] ?></p>
+                                <p class="m-2"><strong>Teléfono:</strong> <?= $profesores["user_phone_number"] ?></p>
+                                <p class="m-2"><strong>ID Empresa:</strong> <?= $profesores["user_id_business"] ?></p>
                                 <p class="m-2"><strong>Registro:</strong> <?= $profesores["registration_date_user"] ?></p>
                                 <p class="m-2"><strong>E-Mail:</strong> <?= $profesores["user_email"] ?></p>
                                 <a href="update_data.php?id=<?= $profesores["id"] ?>" class="btn btn-success mb-2">Editar Usuario <i class="bi bi-pencil-fill"></i></a>

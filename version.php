@@ -21,13 +21,13 @@
 
 <!-- MAIN -->
       <main class="px-3 main-politica">
-          <h1>Versión 1.0</h1>
+          <h1>Versión 2.0</h1>
           <hr>
-          <p class="text-start">Actualmente la APP se encuentra en la versión 1.0, lanzada el día 1 de Diciembre de 2022</p>
-          <p class="text-start">En la fecha anteriormente indicada, la APP cuenta con una funcionalidad del 100% y con una seguridad del 100%, con base en nuestras pruebas de funcionalidad y seguridad<p>
-          <p class="text-start">La APP recibira más actualizaciones en el futuro y actualmente estamos trabajando en la versión 2.0 que incorporara mejoras en la funcionalidad y más funcionalidades</p>
+          <p class="text-start">Actualmente la APP se encuentra en la versión 2.0, lanzada el día 4 de Diciembre de 2022</p>
+          <p class="text-start">En la fecha anteriormente indicada, la APP cuenta con una funcionalidad del 100% y con una seguridad del 99%, con base en nuestras pruebas de funcionalidad y seguridad<p>
+          <p class="text-start">La APP recibira más actualizaciones en el futuro y actualmente estamos trabajando en la versión 3.0 que incorporara más funcionalidades</p>
           <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"><strong>Version 2.0 25%</strong></div>
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"><strong>Version 3.0 25%</strong></div>
           </div>
       </main>
 <!-- MAIN -->
