@@ -3,7 +3,7 @@
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <?php
 
-// Llamamos a "db.php" para conectarnos a la Base de Datos
+// Llamamos a "db_connection.php" para conectarnos a la Base de Datos
     require "db_connection.php";
 
 // Reanudamos la sesión a través de una Cookie
@@ -15,16 +15,10 @@
         return;
     }
 
-// Definimos dos variables una para guardar la hora actual y otra para guardar la fecha actual
-    $hora_actual=date("H:i:s");
-    $fecha_actual=date("Y-m-d");
-
-// Realizamos una consulta SQL para obtener la hora de entrada, hora de salida y total de horas del usuario cuyo "user_id" sea el de la sesión iniciada
+// Realizamos una consulta SQL para obtener los datos del usuario.
     $records = $con->query("SELECT user_name, user_surname, user_phone_number, user_id_business, user_email FROM users WHERE id = {$_SESSION['user']['id']}");
 
-
-
-    // Definimos una variable para imprimir un mensaje en caso de error
+// Definimos una variable para imprimir un mensaje en caso de error
     $error = null;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,22 +27,22 @@
             $error = "Porfavor rellena todos los campos."; 
         }else {
         
-            // Ejecutamos las consultas SQL, en ellas definimos que por defecto los valores a enviar sean los validados.
-            $statement = $con->prepare("UPDATE users SET user_name = :user_name, user_surname = :user_surname, user_phone_number = :user_phone_number WHERE id = 1");
+// Ejecutamos las consultas SQL, en ellas definimos que por defecto los valores a enviar sean los validados.
+            $statement = $con->prepare("UPDATE users SET user_name = :user_name, user_surname = :user_surname, user_phone_number = :user_phone_number WHERE id = {$_SESSION['user']['id']}");
             $statement->execute([
                     ":user_name" => $_POST["user_name"],
                     ":user_surname" => $_POST["user_surname"],
                     ":user_phone_number" => $_POST["user_phone_number"],
                 ]
             );
-            
+            // Definimos un mensaje flash para indicarle al usuario que sus datos se actualizaron correctamente
+            $_SESSION["update_data"] = ["estilo" => "success", "icono" => "check-circle-fill"];
             // Redirigimos a index
-            header("Location: home.php");
+            header("Location: account.php");
             return;
         }
     }
 ?>
-
 
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---- PHP ---->
@@ -89,14 +83,14 @@
                                 <form method="POST" action="account.php">
                                     <?php foreach ($records as $datos) : ?>
                                         <fieldset  class="text-start">
-                                            <legend>Datos de la cuenta</legend>
+                                            <h3>Datos de la cuenta</h3>
                                             <div class="mb-3">
                                                 <label for="disabledTextInput" class="form-label">Nombre</label>
-                                                <input class="form-control" id="user_name" type="text" value="<?= $datos["user_name"]?>" aria-label="default input example">
+                                                <input class="form-control" id="user_name" name="user_name" type="text" value="<?= $datos["user_name"]?>" aria-label="default input example">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="disabledTextInput" class="form-label">Apellidos</label>
-                                                <input class="form-control" id="user_surname" type="text" value="<?= $datos["user_surname"]?>" aria-label="default input example">
+                                                <input class="form-control" id="user_surname" name="user_surname" type="text" value="<?= $datos["user_surname"]?>" aria-label="default input example">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="disabledTextInput" class="form-label">E-mail</label>
@@ -104,13 +98,13 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="disabledTextInput" class="form-label">Telefono</label>
-                                                <input class="form-control" id="user_phone_number" type="text" value="<?= $datos["user_phone_number"]?>" aria-label="default input example">
+                                                <input class="form-control" id="user_phone_number" name="user_phone_number" type="text" value="<?= $datos["user_phone_number"]?>" aria-label="default input example">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="disabledTextInput" class="form-label">ID-Empresa</label>
                                                 <input disabled class="form-control" type="text" value="<?= $datos["user_id_business"]?>" aria-label="default input example">
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Aztualizar Datos</button>
+                                            <button type="submit" class="btn btn-primary">Actualizar Datos</button>
                                         </fieldset>
                                     <?php endforeach ?>
                                 </form>
@@ -136,14 +130,3 @@
 
    </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- Definimos que si se a establecida la Sesión con un usuario muestre los enlaces de Inicio, Añadir Contacto y Cerrar Sesión -->
+        <!-- Definimos que si se a establecida la Sesión con un usuario muestre los enlaces de Inicio, Cuenta del Usuario y Cerrar Sesión -->
         <?php if (isset($_SESSION["user"])): ?>
             <li class="nav-item">
                 <a class="nav-link fw-bold py-1 px-0 m-2 active" href="home.php">Inicio</a>

@@ -48,3 +48,37 @@
     <?php unset($_SESSION["error_start_day"]) ?>
 <?php endif ?>
 <!-- Mensaje flash Jornada Iniciada -->
+
+<!-- Mensaje flash ¡Usuario Actualizado! -->
+      <!-- Definimos si la variable "$_SESSION["error_start_day"]" existe -->
+      <?php if (isset($_SESSION["update_data"])): ?>
+    <div class="container mt-4">
+                                <!-- Definimos el contenido que tendrá la variable en este caso estilo -->
+        <div class="alert alert-<?= $_SESSION["update_data"]["estilo"]?>  alert-dismissible fade show" role="alert">
+                            <!-- Definimos el contenido que tendrá la variable en este caso estilo -->
+            <i class="bi bi-<?= $_SESSION["update_data"]["icono"] ?>"></i>
+            <strong>¡Usuario Actualizado!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <!-- Destruimos la variable "$_SESSION["update_data"]" localmente -->
+    <?php unset($_SESSION["update_data"]) ?>
+<?php endif ?>
+<!-- Mensaje flash Usuario Actualizado -->
+
+<!-- Mensaje flash ¡Usuario Eliminado! -->
+      <!-- Definimos si la variable "$_SESSION["delete_user"]" existe -->
+      <?php if (isset($_SESSION["delete_user"])): ?>
+    <div class="container mt-4">
+                                <!-- Definimos el contenido que tendrá la variable en este caso estilo -->
+        <div class="alert alert-<?= $_SESSION["delete_user"]["estilo"]?>  alert-dismissible fade show" role="alert">
+                            <!-- Definimos el contenido que tendrá la variable en este caso estilo -->
+            <i class="bi bi-<?= $_SESSION["delete_user"]["icono"] ?>"></i>
+            <strong>¡Usuario Eiliminado!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <!-- Destruimos la variable "$_SESSION["update_data"]" localmente -->
+    <?php unset($_SESSION["delete_user"]) ?>
+<?php endif ?>
+<!-- Mensaje flash Usuario Actualizado -->

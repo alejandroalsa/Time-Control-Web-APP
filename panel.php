@@ -28,7 +28,7 @@
     // Realizamos una consulta SQL para obtener la hora de entrada, hora de salida y total de horas del usuario cuyo "user_id" sea el de la sesión iniciada
     $records = $con->query("SELECT user_name, user_id_business, entry_hour, exit_hour, total_hours, total_remuneration FROM records, users WHERE users.id = records.user_id");
 
-    $records2 = $con->query("SELECT user_name, user_id_business FROM users");
+    $records2 = $con->query("SELECT user_name, user_surname, user_phone_number, user_id_business, registration_date_user, user_email, id FROM users");
 
 
 ?>
@@ -55,6 +55,11 @@
     ?>
     <main>
 <!-- MAIN -->
+<!-- PHP para incluir los mensajes flash -->
+<?php
+                        require "./partials/flash_menssages.php";    
+                    ?>
+<!-- PHP para incluir los mensajes flash -->
 
 <!-- Sección tabla de jornadas mas total de horas -->
         <div class="container pt-4">
@@ -96,24 +101,31 @@
                 </div>
             </div>
         </div>
+<!-- Sección tabla de jornadas mas total de horas -->
 
+<!-- Sección tabla de usuarios registrados -->
         <div class="container pt-4">
             <div class="row">
             <h2 class="text-start">Profesores Registrados</h2>
                 <?php foreach ($records2 as $profesores) : ?>
-                    <div class="col-md-4 mb-3 ">
+                    <div class="col-md-5 mb-3 ">
                         <div class="card text-center profesores">
                             <div class="card-body">
-                                <h3 class="card-title text-capitalize"><?= $profesores["user_name"] ?></h3>
-                                <p class="m-2">ID Seneca: <?= $profesores["user_id_business"] ?></p>
-                                <a href="editar.php?id=<?= $contacto["id"] ?>" class="btn btn-success mb-2">Editar Contacto <i class="bi bi-pencil-fill"></i></a>
-                                <a href="eliminar.php?id=<?= $contacto["id"] ?>" class="btn btn-danger mb-2">Eliminar Contacto <i class="bi bi-trash3-fill"></i></a>
+                                <h3 class="card-title text-capitalize"><?= $profesores["user_name"] ?> <?= $profesores["user_surname"] ?></h3>
+                                <p class="m-2"><strong>Telefono:</strong> <?= $profesores["user_phone_number"] ?></p>
+                                <p class="m-2"><strong>ID Seneca:</strong> <?= $profesores["user_id_business"] ?></p>
+                                <p class="m-2"><strong>Registro:</strong> <?= $profesores["registration_date_user"] ?></p>
+                                <p class="m-2"><strong>E-Mail:</strong> <?= $profesores["user_email"] ?></p>
+                                <a href="update_data.php?id=<?= $profesores["id"] ?>" class="btn btn-success mb-2">Editar Usuario <i class="bi bi-pencil-fill"></i></a>
+                                <a href="delete_user.php?id=<?= $profesores["id"] ?>" class="btn btn-danger mb-2">Eliminar Usuario <i class="bi bi-trash3-fill"></i></a>
                             </div>
                         </div>
                     </div>
                 <?php endforeach ?>
             </div>
         </div>
+<!-- Sección tabla de usuarios registrados -->
+
 <!-- Sección tabla de jornadas mas total de horas -->
 
 <!-- MAIN -->

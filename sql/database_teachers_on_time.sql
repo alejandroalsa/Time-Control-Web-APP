@@ -23,7 +23,8 @@ CREATE TABLE records (
     entry_hour TIMESTAMP NULL DEFAULT NULL,
     exit_hour TIMESTAMP NULL DEFAULT NULL,
     total_hours VARCHAR(255) DEFAULT NULL,
-
+    total_seconds INT(255) DEFAULT NULL,
+    total_remuneration DECIMAL(4,2) DEFAULT NULL,
 
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
