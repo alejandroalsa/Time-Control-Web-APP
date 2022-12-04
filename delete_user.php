@@ -39,7 +39,7 @@
     $con->prepare("DELETE FROM users WHERE id = :id")->execute([":id" => $id]);
 
 // Configuracion de Mensajes flash
-    $_SESSION["delete_user"] = ["estilo" => "sucess", "icono" => "check-circle-fill"];
+    $_SESSION["delete_user"] = ["estilo" => "success", "icono" => "check-circle-fill"];
 
 // Redirigimos a index
     header("Location: panel.php");
