@@ -14,15 +14,15 @@ CREATE TABLE users (
     user_email VARCHAR(255) UNIQUE DEFAULT NULL,
     user_working INT DEFAULT NULL,
     user_password VARCHAR(255) DEFAULT NULL,
-    user_admin VARCHAR(255) DEFAULT NULL
+    user_admin INT(1) DEFAULT NULL
 );
 
 CREATE TABLE records (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_id INT NOT NULL,
-    entry_hour TIMESTAMP NULL DEFAULT NULL,
-    exit_hour TIMESTAMP NULL DEFAULT NULL,
-    total_hours VARCHAR(255) DEFAULT NULL,
+    entry_hour DATETIME NULL DEFAULT NULL,
+    exit_hour DATETIME NULL DEFAULT NULL,
+    total_hours TIME DEFAULT NULL,
     total_seconds INT(255) DEFAULT NULL,
     total_remuneration DECIMAL(4,2) DEFAULT NULL,
 
